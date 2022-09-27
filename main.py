@@ -25,20 +25,31 @@ print(original[2])
 # --------------------------------------------------------------------
 
 
-# Test data using numpy arrays
+# Random Test data
 # -----------------------------------------
+'''
 data= np.random.randint(10, size=(5, 3))
 sample= np.random.randint(10, size=(5, 3))
 print("Test data ", data)
 print("Sample data ", sample)
+'''
 
-
-# Initializing KD Tree
+# Specific Test data
 # -----------------------------------------
-kdtree=KDTree(data)
+
+test_ref=[[1,1,1], [-1,-1,-1]]
+test_sample=[[3,3,3],[4,4,4],[0,0,0], [-3,-3,-3],[-4,-4,-4]]
+
+print("These are the reference test points ", test_ref)
+print("These are the sample test points ", test_sample)
 
 
-dist,points=kdtree.query(sample,2)
+# Initializing KD Tree and nearest neighbor return
+# -----------------------------------------
+kdtree=KDTree(test_sample)
+
+
+dist,points=kdtree.query(test_ref,2)
 print("The distance for nearest 2 neighbors are ", dist)
 print("The nearest 2 neighbor points are ", points)
 
