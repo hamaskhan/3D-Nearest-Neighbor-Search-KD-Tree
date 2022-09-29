@@ -1,5 +1,6 @@
 # Libraries and dependencies
 # ---------------------------------------
+from turtle import color
 import numpy as np
 from scipy.spatial import KDTree
 import matplotlib.pyplot as plt
@@ -23,7 +24,9 @@ import matplotlib.pyplot as plt
 original = np.genfromtxt("original.txt", skip_header=1, dtype=str, delimiter=';')
 sampled = np.genfromtxt("sampled.txt", skip_header=1, dtype=str, delimiter=';')
 print(original)
+print("Original data shape is ", original.shape)
 print(sampled)
+print("Sampled data shape is ", sampled.shape)
 
 # Get a specific column for all rows. Similarly get a specific row for all columns
 # print(original[:,6])
@@ -37,8 +40,8 @@ sampled2d=sampled.astype(np.float32)
 originalxyz=original2d[:, [0, 1,2]]
 sampledxyz=sampled2d[:, [0, 1,2]]
 
-print(originalxyz)
-print(sampledxyz)
+#print(originalxyz)
+#print(sampledxyz)
 
 '''
 # Random Test data
@@ -83,13 +86,13 @@ ax = plt.axes(projection='3d')
 #print("Z axis of sample test points are ",test_sample[:,2])
 
 
-ax.scatter3D(originalxyz[:,0], originalxyz[:,1], originalxyz[:,2], label="Original Points")
-ax.scatter3D(sampledxyz[:,0], sampledxyz[:,1], sampledxyz[:,2], label="Sample Points", marker="_")
+ax.scatter3D(originalxyz[:,0], originalxyz[:,1], originalxyz[:,2], label="Original Points", marker=".")
+ax.scatter3D(sampledxyz[:,0], sampledxyz[:,1], sampledxyz[:,2], label="Sample Points", marker=".")
 
 # Select for which points you want to show neighbors
 # ---------------------------------------------------------------------
-#ax.scatter3D(nearest[0][:,0], nearest[0][:,1], nearest[0][:,2], label="Nearest 2 Points for first original point at index[0,0,0]", marker="x")
-ax.scatter3D(nearest[:, :, 0], nearest[:, :, 1], nearest[:, :, 2], label="Nearest 2 Points for all original points", marker="x")
+ax.scatter3D(nearest[0][:,0], nearest[0][:,1], nearest[0][:,2], label="Nearest 2 Points for original point at index[0,0,0]", marker="x")
+#ax.scatter3D(nearest[:, :, 0], nearest[:, :, 1], nearest[:, :, 2], label="Nearest 2 Points for all original points", marker="x")
 
 
 plt.title("3D scatter plot for Nearest Neighbor")
@@ -98,3 +101,4 @@ ax.set_ylabel('Y Label')
 ax.set_zlabel('Z Label')
 plt.legend(loc="upper right")
 plt.show()
+
