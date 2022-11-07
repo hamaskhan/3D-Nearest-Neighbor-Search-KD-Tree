@@ -5,4 +5,4 @@ Hi. This is a python implementation for Nearest Neighbor Search in 3D space for 
 ![Figure_1](https://user-images.githubusercontent.com/43132183/200412915-d8a483c6-0f8b-4c43-af4a-061754d53305.png)
 
 
-![Figure_2](https://user-images.githubusercontent.com/43132183/200426004-a722f90e-3556-477f-b953-31e192d20a37.png)
+![Figure_2](https://user-images.githubusercontent.com/43132183/200426477-401b3110-9c32-482b-b2fe-0ae99aab6455.png)
